@@ -1,25 +1,38 @@
-# <Título do projeto>
+# AnalySUS
 
-Insira aqui uma introdução para que o leitor entenda o contexto e os problemas identificados. Tente apresetnar uma justificativa para o projeto. É desejável que também se insira um [graphical abstract](https://www.elsevier.com/authors/tools-and-resources/visual-abstract).
+O Sistema Único de Saúde (SUS) é um dos maiores e mais complexos sistemas de saúde pública do mundo, abrangendo desde o simples atendimento para avaliação da pressão arterial, por meio da Atenção Primária, até o transplante de órgãos, garantindo acesso integral, universal e gratuito para toda a população do país.
+
+A Atenção Primária à Saúde (APS) é o primeiro nível de atenção em saúde e se caracteriza por um conjunto de ações de saúde, no âmbito individual e coletivo, que abrange a promoção e a proteção da saúde, a prevenção de agravos, o diagnóstico, o tratamento, a reabilitação, a redução de danos e a manutenção da saúde com o objetivo de desenvolver uma atenção integral que impacte positivamente na situação de saúde das coletividades. Trata-se da principal porta de entrada do SUS e do centro de comunicação com toda a Rede de Atenção dos SUS.
+
+O foco na atenção primária se torna um dos pontos principais na logística de recursos e atendimento. Já que evitando que enfermidades venham a se agravar, estaremos evitando a ocupação de leitos de internações, aliviando todo o sistema em cadeia.
 
 ## Objetivos e resultados chave
 
-Em termos simples, os "Objetivos" se relacionam com a meta do projeto, e os "Resultados-Chave" expressam como essa meta será alcançada. Os Objetivos e resultados chave devem ser definidos no início de um projeto. A ideia é escolher uma métrica associada a um projeto e defini-la como o objetivo. Isso mostra a meta que você deseja alcançar. Em seguida, os resultados-chave são definidos para mostrar como atingir o objetivo. Os resultados principais são mensuráveis ​​e geralmente limitados a três a cinco por objetivo.
+Observando o poder computacional de auxílio na tomada de decisão, este projeto visa analisar os dados referentes às internações do SUS, levantando informações pertinentes para a melhoria no atendimento na atenção primária.
 
-Em síntese, os objetivos estão ligados as entregas e os resultados chave aos passos que precisam se seguir para conseguir alcançar os resultados.
-Exemplo de objetivos e resultados chave aplicados a projetos de ciência de dados.
+Utilizando-se de métodos preditivos de análise de dados é pretendido realizar um apontamento prévio com poucas informações iniciais no momento do atendimento primário, podendo sugerir uma maior prioridade em casos de maior probabilidade de uma futura internação.
 
- - Realizar uma análise exploratória de dados de <conjunto de dados>
-    - Indentificar variáveis, descrevê-las e definir os tipos de dados
-    - Realizar transformação de variáveis (codificação)
-    - Tratar de valores faltantes e valores discrepantes
-    - ...
- - Criar modelo de detecção de fakenews
-    - Realizar transformação de dados textuais utilizando o tf-idf
-    - ...
- - ...
+- Captar dados da base oficial do Governo
+   - Selecionar as bases necessárias
+   - Identificar bases secundárias para complementar a informação
+- Realizar a análise exploratória
+   - Identificar variáveis e descrevê las
+   - Tratar valores faltantes
+   - Realizar comparações
+   - Gerar gráficos e anotações
+- Criar um modelo de Regressão capaz de predizer as internações de dois meses adiante
+   - Preparar os dados
+   - Selecionar possíveis modelos
+   - Selecionar o modelo mais eficiente
+- Implementar aplicação que receba um arquivo CSV realize uma análise exploratoria automática
+   - Criar telas de fácil compreenção e usabilidade
+   - Gerar gráficos a partir dos dados enviados
+   - Predizer as internações dos dois meses subsequentes
 
 ## Conteúdo
+
+- **Analysus_EDA**
+- **PipelinePredict**
 
 Utilize esta seção para descrever o que cada notebook faz. Se tiver gerado algum relatório, também utilize essa seção para descrevêlo. Isso facilitará a leitura.
 
@@ -28,8 +41,10 @@ Utilize esta seção para descrever o que cada notebook faz. Se tiver gerado alg
 Descreva aqui quais os passos necessários (dependências externas, comandos, etc.) para replicar o seu projeto. Instalação de dependências necessárias, criação de ambientes virtuais, etc. Este modelo é baseado em um projeto utilizando o [Poetry](https://python-poetry.org/) como gerenciador de dependências e ambientes virtuais. Você pode utilizar o `conda`, ambientes virtuais genéricos do Python ou até mesmo containers do docker. Mas tente fazer algo que seja facilmente reprodutível.
 
 ## Desenvolvedores
- - [Contribuidor 1](http://github.com/contribuidor_1)
- - [Contribuidor 2](http://github.com/contribuidor_2)
+ - [Igor Duarte](https://github.com/igorduartt)
+ - [Rafael P. dos Santos](https://github.com/Rafae1PS)
+ - [Josué dos Santos](https://github.com/JosueSantos)
+ - [Vanessa Sharine](https://github.com/VanSharine)
 
 ## Organização de diretórios
 
