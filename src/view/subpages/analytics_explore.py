@@ -1,10 +1,13 @@
-import streamlit as st
+from urllib.request import urlopen
+import json
+import numpy as np
 import pandas as pd
+import streamlit as st
+import geopandas as gpd
+
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-
-import numpy as np
 
 from src.controller.DataFrameController import DataFrameController
 
@@ -140,6 +143,60 @@ def analytics_explore():
         
         st.markdown("""---""")
 
+        st.subheader("Taxa de Internações po CSAP por mil/hab")
+
+        df_bairros = pd.DataFrame(df_final.groupby(['Bairro _formatado'])["qnt"].sum())
+        df_bairros = df_bairros.add_suffix('').reset_index()
+
+        mapa = gpd.read_file('data/raw/bairros_nomes.geojson')
+        mapa_plot = mapa.merge(df_bairros, left_on='NOME', right_on='Bairro _formatado')
+
+        export_bairros = pd.read_excel('data/raw/export_bairros.xltx')
+        export_df = df_final.merge(export_bairros, left_on='Bairro _formatado', right_on='BAIRRO')
+
+        plot_map = pd.DataFrame(export_df.groupby(['Bairro _formatado', 'GID', 'IDH-B'])["qnt"].sum())
+        plot_map = plot_map.add_suffix('').reset_index()
+
+        pop_bairros = pd.read_csv('data/raw/pop_idh_bairros.csv', sep=";")
+
+        plot_map = plot_map.merge(pop_bairros, left_on='Bairro _formatado', right_on='Bairro _formatado', suffixes=('', '_delme'))
+
+        plot_map['int_div'] = plot_map['qnt']
+        plot_map['taxa_100_hab'] = round((plot_map['int_div'] / plot_map['pop_total']) * 1000, 2)
+        plot_map['taxa_100_hab'].max()
+
+        plot_map = mapa_plot.merge(plot_map, left_on='GID', right_on='GID')
+        
+        with urlopen('https://raw.githubusercontent.com/igorduartt/Fundacao/main/bairros_fortaleza%20(1).json') as response:
+            counties = json.load(response)
+
+        counties["features"][0]
+
+        data_map = plot_map
+
+        fig = px.choropleth_mapbox(data_map, geojson=counties, locations='id', color='taxa_100_hab',
+            color_continuous_scale='ylorrd',
+            hover_name="NOME", 
+            hover_data={"IDH-B":True,"taxa_100_hab":True,"id":False},
+            range_color=([0, 40]),
+            mapbox_style="open-street-map",
+            zoom=10, center = {"lat": -3.7272872, "lon": -38.5359292},
+            opacity=0.6,
+            labels={'taxa_100_hab':'Taxa de Internações po CSAP por mil/hab ', 'NOME': 'Bairro'}            
+        )
+
+        fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+        fig.update_traces(hoverlabel=dict(bgcolor="white", font_size=15, font_family="Rockwell"))
+
+        st.plotly_chart(fig)
+
+
+
+
+
+        st.markdown("""---""")
+        
+        
         st.subheader("Dias de permanência de acordo com o Tipo de Leito")
         st.markdown('Média de dias de permanência de acordo com o tipo de leito.')
          
