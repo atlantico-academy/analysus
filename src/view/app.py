@@ -1,42 +1,35 @@
 import streamlit as st
-import pandas as pd
-import joblib
+from PIL import Image
+
+from src.view.partials.navbar import streamlit_menu
+
+from src.view.subpages.about import about
+from src.view.subpages.predict import predict
+from src.view.subpages.analytics_explore import analytics_explore
+from src.view.subpages.datasus import datasus
+from src.view.subpages.home import home
+
 
 def main():
-    st.title("AnalySUS")
+    favicon = Image.open('src/view/assets/image/favicon.png')
+    st.set_page_config(page_title='Outliers - Analysus', page_icon=favicon)
     
-    st.subheader("Dataset")
-    data_file = st.file_uploader("Upload CSV",type=["csv"])
-    
-    if data_file is not None:
-        with st.spinner('Wait for it...'):
-            internacoes_fort = pd.read_csv(data_file, sep=';')
-            internacoes_fort['qnt'] = 1
+    selected = streamlit_menu()
 
-            st.dataframe(internacoes_fort.head(5))
+    if selected == "Home":
+        home()
+        
+    if selected == "DataSUS":
+        datasus()
 
-            data = internacoes_fort[['ANO_CMPT', 'MES_CMPT', 'CNES', 'fxetar5', 'sexo', 'DIAG_PRINC', 'qnt']]
-            data.columns = ['ANO', 'MES', 'CNES', 'IDADE', 'SEXO', 'DIAG_PRINC', 'TOT_INTER']
+    if selected == "Análise Exploratória":
+        analytics_explore()
 
-            data = pd.get_dummies(data = data, columns=['IDADE', 'SEXO', 'DIAG_PRINC'])
+    if selected == "Predição":
+        predict()
 
-            df = data.groupby(['ANO', 'MES', 'CNES']).sum().reset_index()
-            
-            model_mais_1  = joblib.load('./data/processed/best_model_mais_1.joblib')
-            model_mais_2  = joblib.load('./data/processed/best_model_mais_2.joblib')
-
-            col_model  = joblib.load('./data/processed/col_model.joblib')
-
-            for col in col_model:
-                if(not(col in df.columns)):
-                    df[col] = 0
-
-            X = df
-
-            df['TOT_INTER_mais_1'] = model_mais_1.predict(X)
-            df['TOT_INTER_mais_2'] = model_mais_2.predict(X)
-
-            st.dataframe(df[['ANO', 'MES', 'CNES', 'TOT_INTER', 'TOT_INTER_mais_1', 'TOT_INTER_mais_2']].query("CNES == 2373971").head(15))
-
+    if selected == "Sobre nós":
+        about()
+        
 if __name__ == '__main__':
     main()
