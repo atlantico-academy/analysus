@@ -46,11 +46,9 @@ def analytics_explore():
         x = top8['GRUPO']
 
 
-        # Criando dois subplots
-        fig = make_subplots(rows=1, cols=2, specs=[[{}, {}]], shared_xaxes=True,
-                            shared_yaxes=False, vertical_spacing=0.001)
+        fig = go.Figure()
 
-        fig.append_trace(go.Bar(
+        fig.add_trace(go.Bar(
             x=percentual,
             y=x,
             marker=dict(
@@ -61,16 +59,10 @@ def analytics_explore():
             ),
             name='Valores relativos',
             orientation='h',
-        ), 1, 1)
-
-        fig.append_trace(go.Scatter(
-            x=valor_absoluto, y=x,
-            mode='lines+markers',
-            line_color='rgb(0, 194, 203)',
-            name='Valores absolutos',
-        ), 1, 2)
+        ))
 
         fig.update_layout(
+            title='8 Principais causas de Internações hospitalares por CSAP de acordo com o Grupo da CID-10',
             yaxis=dict(
                 showgrid=False,
                 showline=False,
@@ -114,13 +106,6 @@ def analytics_explore():
 
         # Adicionando as labels
         for ydn, yd, xd in zip(y_nw, y_s, x):
-            # Criando rótulo de dados para o gráfico de pontos
-            annotations.append(dict(xref='x2', yref='y2',
-                                    y=xd, x=ydn - 1000,
-                                    text='{:,}'.format(ydn) + 'K',
-                                    font=dict(family='Arial', size=12,
-                                            color='rgb(0, 194, 203)'),
-                                    showarrow=False))
             # Gráfico com valores relativos
             annotations.append(dict(xref='x1', yref='y1',
                                     y=xd, x=yd + 3,
@@ -131,9 +116,7 @@ def analytics_explore():
         # Fonte dos dados
         annotations.append(dict(xref='paper', yref='paper',
                                 x=-0.1, y=-0.110,
-                                text='Fonte dos dados: Departamento de Informática do SUS (DATASUS) "' +
-                                    'Sistema de Informações Hospitalares, ' +
-                                    'Disponivel em https://datasus.saude.gov.br/ ',
+                                text='Fonte dos dados: Departamento de Informática do SUS (DATASUS)',
                                 font=dict(family='Arial', size=11, color='rgb(150,150,150)'),
                                 showarrow=False))
 
