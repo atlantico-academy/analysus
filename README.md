@@ -42,8 +42,8 @@ Descreva aqui quais os passos necessários (dependências externas, comandos, et
 
 ## Desenvolvedores
  - [Igor Duarte](https://github.com/igorduartt)
- - [Rafael P. dos Santos](https://github.com/Rafae1PS)
  - [Josué dos Santos](https://github.com/JosueSantos)
+ - [Rafael P. dos Santos](https://github.com/Rafae1PS)
  - [Vanessa Sharine](https://github.com/VanSharine)
 
 ## Organização de diretórios
