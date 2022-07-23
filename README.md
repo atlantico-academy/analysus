@@ -81,8 +81,6 @@ Utilizando-se de métodos preditivos de análise de dados é pretendido realizar
 
 ## Organização de diretórios
 
-> **Nota**: essa seção é somente para entendimento do usuário do template. Por favor removê-la quando for atualizar este `README.md`
-
 ```
 .
 ├── data/                   # Diretório contendo todos os arquivos de dados (Geralmente está no git ignore ou git LFS)
