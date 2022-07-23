@@ -7,9 +7,11 @@
 ![](https://img.shields.io/badge/Code-R-informational?style=flat&logo=R&logoColor=white&color=0F80C0)
 ![](https://img.shields.io/badge/Tools-Pandas-informational?style=flat&logo=pandas&logoColor=white&color=0F80C0)
 ![](https://img.shields.io/badge/Tools-NumPy-informational?style=flat&logo=NumPy&logoColor=white&color=0F80C0)
+![](https://img.shields.io/badge/Tools-Plotly-informational?style=flat&logo=Plotly&logoColor=white&color=0F80C0)
 ![](https://img.shields.io/badge/Tools-Scikit_Learn-informational?style=flat&logo=scikit-learn&logoColor=white&color=0F80C0)
 ![](https://img.shields.io/badge/Tools-Streamlit-informational?style=flat&logo=Streamlit&logoColor=white&color=0F80C0)
 ![](https://img.shields.io/badge/Tools-Heroku-informational?style=flat&logo=Heroku&logoColor=white&color=0F80C0)
+![](https://img.shields.io/badge/Tools-Docker-informational?style=flat&logo=Docker&logoColor=white&color=0F80C0)
 
 ---
 
