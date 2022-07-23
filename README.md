@@ -34,7 +34,7 @@ Utilizando-se de métodos preditivos de análise de dados é pretendido realizar
    - Selecionar as bases necessárias
    - Identificar bases secundárias para complementar a informação
 - Realizar a análise exploratória
-   - Identificar variáveis e descrevê las
+   - Identificar variáveis e descrevê-las
    - Tratar valores faltantes
    - Realizar comparações
    - Gerar gráficos e anotações
@@ -42,8 +42,8 @@ Utilizando-se de métodos preditivos de análise de dados é pretendido realizar
    - Preparar os dados
    - Selecionar possíveis modelos
    - Selecionar o modelo mais eficiente
-- Implementar aplicação que receba um arquivo CSV realize uma análise exploratoria automática
-   - Criar telas de fácil compreenção e usabilidade
+- Implementar aplicação que receba um arquivo CSV realize uma análise exploratória automática
+   - Criar telas de fácil compreensão e usabilidade
    - Gerar gráficos a partir dos dados enviados
    - Predizer as internações dos dois meses subsequentes
 
@@ -73,7 +73,7 @@ Utilizando-se de métodos preditivos de análise de dados é pretendido realizar
 
 [<img src="https://user-images.githubusercontent.com/50116696/180584891-141991ab-718c-4ea2-9a67-7abec49f1710.jpg"  width="150" height="150">](https://github.com/igorduartt) | [<img src="https://user-images.githubusercontent.com/50116696/180584892-97be4aac-e81a-4928-be8a-49ff5ca24dec.jpg"  width="150" height="150">](https://github.com/JosueSantos) |  [<img src="https://user-images.githubusercontent.com/50116696/180584893-10061f43-9ea1-4622-8f33-7feb11942a4f.jpg"  width="150" height="150">](https://github.com/Rafae1PS) | [<img src="https://user-images.githubusercontent.com/50116696/180584895-7fb2b45e-084c-4ed6-bf2b-637f01ce5b37.jpg"  width="150" height="150">](https://github.com/VanSharine) 
 --- | --- | --- | --- 
-[Igor Duarte](https://github.com/igorduartt) | [Josué dos Santos](https://github.com/JosueSantos) |  [Rafael P. dos Santos](https://github.com/Rafae1PS) | [Vanessa Sharine](https://github.com/VanSharine) 
+[Igor Duarte](https://github.com/igorduartt) | [Josué dos Santos](https://github.com/JosueSantos) |  [Rafael P. dos Santos](https://github.com/Rafae1PS) | [Vanessa Camelo](https://github.com/VanSharine) 
 
 
 
