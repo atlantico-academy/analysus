@@ -13,7 +13,7 @@ def home():
 
     st.image('src/view/assets/image/logo2.png', width = 200)
 
-    st.markdown("Hospitalizações por condições sensíveis à atenção primária é considerado um dos indicadores de eficiência mais importantes do Sistema Único de Saúde (SUS), se trata de uma informação que demonstra de maneira indireta quais internações poderiam ter sido evitadas na Atenção Primária. Em um contexto brasileiro, estudar este tipo de hospitalização se torna viável, tendo em vista que o Sistema de Informações Hospitalares disponibiliza um dataset público de todas as internaçes realizadas e validadas em hospitais públicos.")
+    st.markdown("Hospitalização por condições sensíveis à atenção primária é considerado um dos indicadores de eficiência mais importantes do Sistema Único de Saúde (SUS), se trata de uma informação que demonstra de maneira indireta quais internações poderiam ter sido evitadas na Atenção Primária. Em um contexto brasileiro, estudar este tipo de hospitalização se torna viável, tendo em vista que o Sistema de Informações Hospitalares disponibiliza um dataset público de todas as internaçes realizadas e validadas em hospitais públicos.")
     st.markdown("O foco na atenção primária se torna um dos pontos principais na logística de recursos e atendimento. Já que evitando que enfermidades venham a se agravar, estaremos evitando a ocupação de leitos de internações, aliviando todo o sistema em cadeia.")
     st.markdown("**Objetivos**")
     st.markdown("Percebendo o fácil acesso aos dados e a importância de tal indicador para o SUS, o projeto teve como objetivo analisar e desenvolver um modelo de predição de internações hospitares por causas evitáveis em hospitais públicos da cidade de Fortaleza.")
